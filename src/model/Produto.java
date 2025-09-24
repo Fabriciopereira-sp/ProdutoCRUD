@@ -3,13 +3,19 @@ package model;
 public class Produto {
     private Long id;
     private String nome;
-    private double preco;
-    private int quantidade;
+    private Double preco;
+    private Integer quantidade;
 
     public Produto() {}
 
-    public Produto(Long id, String nome, double preco, int quantidade) {
+    public Produto(Long id, String nome, Double preco, Integer quantidade) {
         this.id = id;
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+
+    public Produto(String nome, Double preco, Integer quantidade) {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
@@ -21,14 +27,19 @@ public class Produto {
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
 
-    public double getPreco() { return preco; }
-    public void setPreco(double preco) { this.preco = preco; }
+    public Double getPreco() { return preco; }
+    public void setPreco(Double preco) { this.preco = preco; }
 
-    public int getQuantidade() { return quantidade; }
-    public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
+    public Integer getQuantidade() { return quantidade; }
+    public void setQuantidade(Integer quantidade) { this.quantidade = quantidade; }
 
     @Override
     public String toString() {
-        return "Produto [id=" + id + ", nome=" + nome + ", preco=" + preco + ", quantidade=" + quantidade + "]";
+        return "Produto {" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", preco=" + preco +
+                ", quantidade=" + quantidade +
+                '}';
     }
 }
